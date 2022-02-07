@@ -1,0 +1,167 @@
+@charset "UFT-8"; /*Colocar sempre que criarmos um css para o html*/
+
+@import url('https://fonts.googleapis.com/css2?family=Crafty+Girls&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); /*Importação da fonte bebas do google fontes*/
+
+@font-face {    /*Puxando a fonte que tenho na pasta interna no pc*/
+    font-family: 'Android' ;
+    src: url('../fontes/idroid.otf') format('opentype'); /*Colocar só o "/" para que possa achar a fonte na pasta*/
+    font-weight: normal;
+}
+
+:root{  /*Conhecemos essas declarações como declarações globais*/
+    --cor0: #8EF9F3;
+    --cor1: #508CA4;
+    --cor2: #2cdb92af; /*Mérodo de declarar uma cor*/
+    --cor3: #3EC300;
+    --cor4: #075211;
+    --cor5: #052416;
+    
+    /*Declarando a fonte que vai ser usada*/
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', 'cursive';
+    --fonte-android: 'Android', 'cursive';
+
+} 
+/*O asteristico serve para selecionar todos os conteudos HTML, ou seja, vale para todos os elementos*/
+* {
+    margin: 0px;    /*Todos os elementos estão com 0px de padding e Margin*/
+    padding: 0px;
+}
+
+
+body{
+
+    background-color: var(--cor0); /*Para declarar a função temos que dar ctrl + alt e procurar la em baixo qual a cor que queremos*/
+    font-family: var(--fonte-padrao);
+    
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor4), var(--cor5));
+    min-height: 130px; /*Altura do cabeçalho*/
+    text-align: center;
+    padding-top: 30px; /*Espaçamento do título da página*/
+}
+header > p {    /*Serve para mexer em tudo que está dentro do cabeçalho em parágrafo*/
+    color: white;
+    font-size: 1.3em; /*Aqui vamos aumentar o tamanho da letra do parágrafo do cabeçalho*/
+    font-family: var(--fonte-padrao);
+    max-width: 600px; /*Quando chegar em 600px ele vai quebrar linha e vai para baixo*/
+    padding-left: 10px; /*Aqui vamos colocar um pequeno paragrafo para que as lestras não fiquem grudadas no canto esquerdo e direito do site*/
+    padding-right: 10px; /*Aqui vamos colocar um pequeno paragrafo para que as lestras não fiquem grudadas no canto esquerdo e direito do site*/
+    margin: auto;
+    text-shadow: 12px 12px 12px rgb(0, 0, 0); /*Aqui vamos colocar um leve sombreamento sobre as letras do paragrafo do cabeçalho*/
+    padding-bottom: 20px;
+
+}
+nav{
+    background-color:  var(--cor5) ;
+    padding: 10px;
+}
+nav > a{
+    color: white;
+    padding: 10px; /*Aqui ele vai separar o meio de cada escrita*/
+    text-decoration: none;
+    border-radius: 2px;
+    transition-duration: 0.65s; /*Aqui vamos colocar um tempo para que a caixa mostre os contrastes de cores*/
+    font-weight: bold; /*Fonte em negrito*/
+}
+nav > a:hover{ /* Aqui vamos criar uma caixa atras do "home/noticia..." e vamos colorir */
+    background-color: #3EC300; 
+    color: var(--cor5);
+}
+header > h1{
+    color: white;
+    font-family: var(--fonte-android);
+    font-size: 2.5em; /*Vamos aumentar o tamanho da font do cabeçalho*/
+    margin-bottom: 18px;
+    text-shadow: 12px 12px 12px rgb(0, 0, 0); /*Aqui vamos colocar um leve sombreamento sobre as letras do paragrafo do cabeçalho*/
+    
+}
+main{   /*Local onde está todo o conteudo*/
+
+    min-width: 300px; /*Largura mínima de 300px*/
+    max-width: 1000px; /*Largura máxima de 1000px*/
+    background-color: white;
+    margin: auto; /*centraliza todo o conteudo no centro*/
+    margin-bottom: 30px; /*criando uma espaço na parte de baixo*/
+    padding: 15px; /*para dar uma espaço de cada lado da página*/
+    box-shadow: 0px 0px 10px black; /*Colocando uma sombra*/
+    border-bottom-left-radius: 10px ; /*Arredondamento das laterais do site*/
+    border-bottom-right-radius: 10px ; /*Arredondamento das laterais do site*/
+}
+main img{
+    width: 100%; /*largura da imagem*/
+}
+main img.pequena{ /*Arrumando o tamanho da imagem do bugdroid, que está muito grande/ estamos diminuindo fazendo uma classe la no html do site*/ 
+    width: 350px;
+    display: block; /*O display e o margin foi feito para que pudessemos centralizar a imagem no centro*/
+    margin: auto;
+
+}
+div.video{
+    background-color: #052416;
+    margin: 0px -15px 30px -15px;
+    padding: 20px;
+    padding-bottom:33%;
+
+    position: relative;
+    
+}
+div.video > iframe{ /*fazendo uma gambiarra na parte do ifrema que veio do youtube*/
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    bottom: 90%;
+}
+aside{
+    background-color: var(--cor2);
+    padding: 10px;
+    border-radius: 10px;
+}
+aside > ul{
+    list-style-type: '\2714\00A0\00A0'; /*aqui vamos colocar uma  emote de chack na lista com cod de 2714 e temos que colocar o '\' para funcionar*/
+    list-style-position: inside; /*Aqui vamos colocar os pontos para dentro do aside*/
+    columns: 2; /*Aqui vamos dividir a lista em duas colunas*/
+    box-shadow: 3px 3px 8px black;
+}
+aside > h3{
+    background-color: #052416;
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+main h1{
+    color: var(--cor4);
+    font-family: var(--fonte-android);
+}
+main h2{
+    color: var(--cor4);
+    font-family: var(--fonte-android);
+    font-size: 1.25em; /*Diminuindo o tamanho da letra do H2*/
+    background-image: linear-gradient(to right , var(--cor2), transparent);
+    text-indent: 8px;
+}
+main p{ /*Aqui colocamos dentro do main para que quando ele vá mudar ele não mude do cabeçalho...*/
+    margin: 15px 0px;  /*Criando um espaço em baixo e em cima de cada paragrafo para não ficar tudo grudado*/
+    text-align: justify; /*Colocando de modo justificado os textos*/
+    text-indent: 30px; /*Recuo que todo paragrafo tem, ou seja, é aquele espaço que tem na frente do paragrafo*/
+    line-height: 2em; /*Aqui vamos ter a altura da linha, espaço entre uma linha e outra*/
+}
+main strong{ /*Aqui vamos trabalhar nos textos que estão em negrito no nosso texto*/
+    color: var(--cor4);
+    font: bold;
+    background-color: var(--cor3);
+    border-radius: 3px; /*Arredondamento da caixa que envolve o box*/
+    padding: 2px 6px; /*Espaçamento para não ficar grudado*/
+}
+main a {
+    text-decoration: none; /*aqui vamos tirar a decoração de texto dos links*/
+    font-weight: bolder; /*Aqui vamos colocar ele em negrito*/
+}
+main a:hover{
+    text-decoration: underline; /*Quando passamos o mouse por cima do link ele aparece um underline*/
+}
